@@ -66,9 +66,9 @@ def backspace():
 
 # Первая строка кнопок
 Button(text="%", font=(cs.main_set[3], 15), command=lambda: input_num("%")).place(x=20, y=110, height=50, width=70)
-Button(text="CE", font=(cs.main_set[3], 14), bg=main_set[4], command=clear_display).place(x=100, y=110, height=50, width=70)
-Button(text="C", font=(cs.main_set[3], 14), bg=main_set[4], command=clear_display).place(x=180, y=110, height=50, width=70)
-Button(text="⌫", font=(cs.main_set[3], 12), bg=main_set[4], command=backspace).place(x=260, y=110, height=50, width=70)
+Button(text="CE", font=(cs.main_set[3], 14), bg=cs.main_set[4], command=clear_display).place(x=100, y=110, height=50, width=70)
+Button(text="C", font=(cs.main_set[3], 14), bg=cs.main_set[4], command=clear_display).place(x=180, y=110, height=50, width=70)
+Button(text="⌫", font=(cs.main_set[3], 12), bg=cs.main_set[4], command=backspace).place(x=260, y=110, height=50, width=70)
 
 # Вторая строка кнопок
 Button(text="(", font=(cs.main_set[3], 15), command=lambda: input_num("(")).place(x=20, y=170, height=50, width=70)

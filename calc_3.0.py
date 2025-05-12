@@ -6,6 +6,8 @@ import os
 
 # Импорт настроек
 import calc_settings as cs
+# Импорт модуля логирования
+import log_module as lm
 
 
 # Создание окна приложения
@@ -34,10 +36,17 @@ def answer():
         
         evaluate = eval(ans)
     except SyntaxError:  # Обработка синтаксических ошибок:  
-        evaluate = cs.localization(1)  
+        evaluate = cs.localization(1)
+        lm.print_logs(f"SyntaxError in -> {ans}")  
     except ZeroDivisionError:  # Обработка ошибки деления на ноль:  
         evaluate = cs.localization(2) 
-        
+        lm.print_logs(f"ZeroDivisionError in -> {ans}")  
+    except ValueError as err:   # Обработка всех остальных ошибок:  
+        lm.print_logs(f"ValueError {err} in -> {ans}")
+    except TypeError as err:   
+        lm.print_logs(f"TypeError {err} in -> {ans}")
+    except IndexError as err:  
+        lm.print_logs(f"IndexError {err} in -> {ans}")
 
     input_box2.config(state='normal')
     input_box2.delete(0, END)
